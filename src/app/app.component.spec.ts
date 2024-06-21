@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ang-blog-app'`, () => {
+  it(`should have as title 'ang-blog-dashboard'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ang-blog-app');
+    expect(app.title).toEqual('ang-blog-dashboard');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ang-blog-app');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ang-blog-dashboard');
   });
 });

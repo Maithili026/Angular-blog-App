@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../../Vs-code-intro"
+	},
+	{
+		"path": "C:/Users/maith/Downloads/omnifood-project-maithili"
+	},
+	{
+		"path": "../.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "omnifood-project-maithili"
+  }
+}

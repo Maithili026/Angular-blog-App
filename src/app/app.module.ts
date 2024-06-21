@@ -1,50 +1,56 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment.development'; //envoirnment ts file
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { CategoryNavbarComponent } from './layout/category-navbar/category-navbar.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
-import { SingleCategoryComponent } from './pages/single-category/single-category.component';
-import { SinglePostComponent } from './pages/single-post/single-post.component';
-import { TermAndConditionComponent } from './pages/term-and-condition/term-and-condition.component';
-import { ContactUsComponent } from './pages/contact-us/contact-us.component';
-import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
-import { CommentFormComponent } from './comments/comment-form/comment-form.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
-import { PostCardComponent } from './layout/post-card/post-card.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { AllPostComponent } from './posts/all-post/all-post.component';
+import { NewPostComponent } from './posts/new-post/new-post.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CategoryNavbarComponent,
     FooterComponent,
-    HomeComponent,
-    SingleCategoryComponent,
-    SinglePostComponent,
-    TermAndConditionComponent,
-    ContactUsComponent,
-    SubscriptionFormComponent,
-    CommentFormComponent,
-    CommentListComponent,
-    PostCardComponent
+    DashboardComponent,
+    CategoriesComponent,
+    AllPostComponent,
+    NewPostComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaceCongfig),
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaceCongfig)
+    FormsModule,
+    AngularEditorModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+        preventDuplicates: true
+      }),
   ],
   providers: [
-    provideClientHydration()
+    // provideAnimations(),
+    // provideToastr(),
   ],
   bootstrap: [AppComponent]
 })
